@@ -1,0 +1,4 @@
+# Blacklist of To Address
+ToBlacklist = [
+    "0x036B8FD487F4F6E73D40466ACB275EF5418296DC",
+]

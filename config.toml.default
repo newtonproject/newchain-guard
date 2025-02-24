@@ -1,0 +1,101 @@
+# Listening host address
+Host = "0.0.0.0"
+Port = 8801
+
+rpcURL = "https://rpc1.newchain.newtonproject.org/"
+#rpcURL = "/path/to/node/geth.ipc"
+
+# Method
+MethodWhitelist = [
+    "eth_getBalance",
+    "eth_protocolVersion",
+    "eth_gasPrice",
+    "eth_blockNumber",
+    "eth_sendRawTransaction",
+    "eth_getTransactionCount",
+    "eth_getBlockByHash",
+    "eth_getBlockByNumber",
+    "eth_getTransactionByHash",
+    "eth_getTransactionReceipt",
+    "eth_getBlockTransactionCountByNumber",
+    "eth_getTransactionByBlockNumberAndIndex",
+    "eth_getBlockTransactionCountByHash",
+    "eth_getCode",
+    "eth_estimateGas",
+    "eth_call",
+    "txpool_status",
+    "rpc_modules",
+    "net_version",
+]
+
+# From address
+FromBlackListConfig = "fromblacklist.toml"
+
+# To address
+DisableContractCreate = true
+
+
+# To address
+DisableContractCreate = true
+ToBlackListConfig = "toblacklist.toml"
+
+# Hash
+TxHashBlackListConfig = ""
+
+# Value
+EnableMaxValueVerify = false
+MaxValueInNEW = 10000 # NEW
+
+# GasLimit
+EnableMaxGasLimitVerify = true
+MaxGasLimit = 10000000
+MinGasLimit = 21000
+
+# GasPrice
+MinGasPriceInWEI = 100 # WEI
+MaxGasPriceInWEI = 1000000000000000000 # 1NEW, max is 9223372036854775807 (int64)
+MinGasTipCapInWEI = 100
+MaxGasTipCapInWEI = 1000000000000000000
+
+# IP rate limit
+#EnableIPRateLimit = false
+#IPRate = 1000 # 1000 request per second for per IP
+
+# SSL
+#SSLCertificate = "/path/to/cert.pem"
+#SSLCertificateKey = "/path/to/key.pem"
+
+# Log
+# log level: panic, fatal, error, warn, info, debug
+LogLevel = "info"
+
+EnableActiveMQ = false
+
+# Enable whitelist, and get value from DB
+EnableWhitelistDB = false
+
+# Lua
+EnableLuaFilter = true
+LuaFile = "guard.lua.example" # path to lua file
+EnableFromCheck = true # Whether check from address
+LuaCallFunctionName = "checkTx" # the function name to call, the args force <hash, from, to>, function checkTx(hash, from, to)
+
+[HTTPRouters]
+    balance = "http://127.0.0.1:8888"
+    faucet = "http://127.0.0.1:8888"
+
+
+[ActiveMQ]
+    Server = "url"
+    Username = "name"
+    Password = "password"
+    ClientID = "guard" # Default "guard"
+    QoS = 1 # 0, 1, 2, Default 1, 
+    Topic = "RawTransaction" # Default "RawTransaction"
+
+[database_whitelist]
+  db = "mysql"
+  database = "newgravity"
+  host = "47.75.82.30"
+  password = "Newton123!!!"
+  user = "newchain"

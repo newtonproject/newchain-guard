@@ -1,0 +1,4 @@
+# Blacklist of Tx Hash
+TxHashBlacklist = [
+    "0xc1177fc4c6623f28ee57b3d46e84be67b47dae8be416fc6fb7d6d79ed350c621",
+]

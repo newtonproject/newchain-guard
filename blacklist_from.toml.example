@@ -1,0 +1,5 @@
+# Blacklist of From Address
+FromBlackList = [
+    "0x036B8FD487F4F6E73D40466ACB275EF5418296DC",
+    "0xb0fcb48c8583f7bF702eFA4a3D8Df2cf7Fe74B63",
+]

@@ -1,0 +1,59 @@
+mysql=require 'mysql';
+
+function compareAddress(a, b)
+    local aa = string.lower(a)
+    local bb = string.lower(b)
+    if string.len(aa) < 2 then
+        return false
+    end
+    if string.len(bb) < 2 then
+        return false
+    end
+    if string.sub(aa, 0, 2) == "0x" then
+        aa = string.sub(aa, 2)
+    end
+    if string.sub(bb, 0, 2) == "0x" then
+        bb = string.sub(bb, 2)
+    end
+    if aa == bb then
+        return true
+    end
+    return false
+end
+
+
+-- checkTx
+-- @return code
+function checkTx(hash, from, to)
+    local env  = mysql.new()
+    local ok, err = env:connect({ host = '127.0.0.1', port = 3306, database = 'grv_api', user = 'newgravity', password = 'Newton123!!!' })
+    if err then
+        print(err)
+        return 500
+    end
+
+    -- ignore hash
+    -- if from is supernode then return true
+    -- if to is escrow of from then return true
+    local sql = string.format("select escrow, supernode from accounts where address = '%s'", from)
+    res, err = env:query(sql)
+    if err then
+        print(err)
+        env:close()
+        return 500 -- db error
+    end
+
+    for _, v in pairs(res) do
+        if tonumber(v['supernode']) == 1 then
+            env:close()
+            return 200
+        end
+        if compareAddress(v['escrow'], to) then
+            env:close()
+            return 200 -- OK
+        end
+    end
+
+    env:close()
+    return 420 -- StatusFromAddressBlackList
+end

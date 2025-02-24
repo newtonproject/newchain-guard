@@ -1,0 +1,12 @@
+wallet/*
+debug.test
+debug
+.idea/*
+.vscode/*
+NewChainGuard
+NewChainGuard.exe
+config.toml
+error.log
+ssl
+/blacklist_*.toml
+/guard.lua
