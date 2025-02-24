@@ -10,9 +10,9 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/ethclient"
+	"github.com/newtonproject/newchain-guard/params"
 	"github.com/spf13/viper"
 	"github.com/upper/db/v4/adapter/mysql"
-	"gitlab.newtonproject.org/yangchenzhong/NewChainGuard/params"
 )
 
 const defaultConfigFile = "./config.toml"

@@ -9,8 +9,8 @@ import (
 	"strings"
 
 	"github.com/ethereum/go-ethereum/common/hexutil"
-	"gitlab.newtonproject.org/yangchenzhong/NewChainGuard/notify"
-	"gitlab.newtonproject.org/yangchenzhong/NewChainGuard/params"
+	"github.com/newtonproject/newchain-guard/notify"
+	"github.com/newtonproject/newchain-guard/params"
 )
 
 func (f *Filter) HandleJSONRequest(w http.ResponseWriter, r *http.Request, bodyBytes []byte) (*params.LogRequest, error) {

@@ -5,8 +5,8 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/types"
+	"github.com/newtonproject/newchain-guard/params"
 	log "github.com/sirupsen/logrus"
-	"gitlab.newtonproject.org/yangchenzhong/NewChainGuard/params"
 )
 
 func TestCheckTransaction(t *testing.T) {

@@ -14,12 +14,12 @@ import (
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/ethclient"
+	mysql "github.com/newtonproject/newchain-guard/gluasql_mysql"
+	"github.com/newtonproject/newchain-guard/notify"
+	"github.com/newtonproject/newchain-guard/params"
 	log "github.com/sirupsen/logrus"
 	"github.com/syndtr/goleveldb/leveldb/errors"
 	lua "github.com/yuin/gopher-lua"
-	mysql "gitlab.newtonproject.org/yangchenzhong/NewChainGuard/gluasql_mysql"
-	"gitlab.newtonproject.org/yangchenzhong/NewChainGuard/notify"
-	"gitlab.newtonproject.org/yangchenzhong/NewChainGuard/params"
 )
 
 type Filter struct {

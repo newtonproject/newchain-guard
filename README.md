@@ -6,20 +6,20 @@ NewChainGuard is the guard of NewChain.
 
 ### Download from releases
 
-Binary archives are published at https://release.cloud.diynova.com/newton/NewChainGuard/.
+Binary archives are published at https://github.com/newtonproject/newchain-guard/releases.
 
 ### Building the source
 
 install:
 
 ```bash
-git clone git@gitlab.newtonproject.org:yangchenzhong/NewChainGuard.git && cd NewChainGuard && make
+git clone https://github.com/newtonproject/newchain-guard && cd newchain-guard && make
 ```
 
 run NewChainGuard
 
 ```bash
-$GOPATH/bin/NewChainGuard
+$GOPATH/bin/newchain-guard
 ```
 
 ### Usage

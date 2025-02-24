@@ -8,8 +8,8 @@ import (
 	"os"
 	"strings"
 
+	"github.com/newtonproject/newchain-guard/params"
 	"github.com/spf13/cobra"
-	"gitlab.newtonproject.org/yangchenzhong/NewChainGuard/params"
 )
 
 // DefaultChainID default chain ID

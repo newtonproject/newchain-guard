@@ -9,8 +9,8 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/newtonproject/newchain-guard/cli"
 	"github.com/sirupsen/logrus"
-	"gitlab.newtonproject.org/yangchenzhong/NewChainGuard/cli"
 )
 
 // test address

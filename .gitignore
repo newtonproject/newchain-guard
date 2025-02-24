@@ -5,6 +5,8 @@ debug
 .vscode/*
 NewChainGuard
 NewChainGuard.exe
+newchain-guard
+newchain-guard.exe
 config.toml
 error.log
 ssl

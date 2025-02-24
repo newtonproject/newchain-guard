@@ -13,11 +13,11 @@ import (
 
 	"github.com/didip/tollbooth"
 	"github.com/didip/tollbooth/limiter"
+	"github.com/newtonproject/newchain-guard/notify"
+	"github.com/newtonproject/newchain-guard/server"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
-	"gitlab.newtonproject.org/yangchenzhong/NewChainGuard/notify"
-	"gitlab.newtonproject.org/yangchenzhong/NewChainGuard/server"
 )
 
 func (cli *CLI) buildServerCmd() *cobra.Command {
@@ -118,23 +118,23 @@ func (cli *CLI) buildServerCmd() *cobra.Command {
 
 			httpRouters := viper.GetStringMapString("HTTPRouters")
 			handleRouter := func(p, u string) {
-					target, err := url.Parse(u)
-					if err != nil {
-						logger.Error(err)
-						return
-					}
-					proxyFunc := func(w http.ResponseWriter, r *http.Request) {
-						proxy := server.NewSingleHostReverseProxy2(target, p)
-						proxy.ErrorLog = logger
-						proxy.ServeHTTP(w, r)
-					}
-					p = "/" + p
-					http.HandleFunc(p, proxyFunc)
-					logger.Printf("Proxy '%s' to '%s'", p, target.String())
+				target, err := url.Parse(u)
+				if err != nil {
+					logger.Error(err)
+					return
+				}
+				proxyFunc := func(w http.ResponseWriter, r *http.Request) {
+					proxy := server.NewSingleHostReverseProxy2(target, p)
+					proxy.ErrorLog = logger
+					proxy.ServeHTTP(w, r)
+				}
+				p = "/" + p
+				http.HandleFunc(p, proxyFunc)
+				logger.Printf("Proxy '%s' to '%s'", p, target.String())
 			}
 			if len(httpRouters) > 0 {
 				for p, u := range httpRouters {
-					handleRouter(p,u)
+					handleRouter(p, u)
 				}
 			}
 

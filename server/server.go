@@ -11,9 +11,9 @@ import (
 	"net/http"
 	"net/url"
 
+	"github.com/newtonproject/newchain-guard/filter"
+	"github.com/newtonproject/newchain-guard/params"
 	"github.com/sirupsen/logrus"
-	"gitlab.newtonproject.org/yangchenzhong/NewChainGuard/filter"
-	"gitlab.newtonproject.org/yangchenzhong/NewChainGuard/params"
 )
 
 type Server struct {

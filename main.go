@@ -1,7 +1,7 @@
 package main
 
 import (
-	"gitlab.newtonproject.org/yangchenzhong/NewChainGuard/cli"
+	"github.com/newtonproject/newchain-guard/cli"
 )
 
 func main() {

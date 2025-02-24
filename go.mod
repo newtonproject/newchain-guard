@@ -1,4 +1,4 @@
-module gitlab.newtonproject.org/yangchenzhong/NewChainGuard
+module github.com/newtonproject/newchain-guard
 
 go 1.15
 

@@ -8,8 +8,8 @@ import (
 	"net/http"
 	"strings"
 
+	"github.com/newtonproject/newchain-guard/params"
 	log "github.com/sirupsen/logrus"
-	"gitlab.newtonproject.org/yangchenzhong/NewChainGuard/params"
 )
 
 type IPCServer struct {
